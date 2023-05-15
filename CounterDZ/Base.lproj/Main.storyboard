@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,45 +19,93 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQq-Tl-IDC">
-                                <rect key="frame" x="172" y="513" width="70" height="70"/>
+                                <rect key="frame" x="102" y="613" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="e8A-pO-e3v"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="jyZ-tV-BzL"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="+" cornerStyle="capsule" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                     <directionalEdgeInsets key="contentInsets" top="-4" leading="0.0" bottom="0.0" trailing="-1"/>
-                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="plusButtonDidTap" destination="BYZ-38-t0r" eventType="touchUpInside" id="HBk-fl-o4T"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elN-5d-yCo">
-                                <rect key="frame" x="107" y="313" width="200" height="100"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uw9-8w-B1m" userLabel="Minus Button">
+                                <rect key="frame" x="242" y="613" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="1Ey-b8-aR8"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="1Mt-iv-nLE"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="2KA-36-08c"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="k80-wh-BOB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="qLh-Bi-4ZR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="-" cornerStyle="capsule" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
+                                    <directionalEdgeInsets key="contentInsets" top="-4" leading="0.0" bottom="0.0" trailing="-1"/>
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="minusButtonDidTap" destination="BYZ-38-t0r" eventType="touchUpInside" id="24l-KT-ysV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHY-xX-sH7" userLabel="Erase Button">
+                                <rect key="frame" x="172" y="535" width="70" height="70"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="G6N-Uy-Wrw"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="jZ2-IX-etE"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="eraser_fill_icon_185673-3 1" cornerStyle="capsule">
+                                    <directionalEdgeInsets key="contentInsets" top="-4" leading="0.0" bottom="0.0" trailing="-1"/>
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="eraseButtonDidTap" destination="BYZ-38-t0r" eventType="touchUpInside" id="rAa-cV-K50"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRI-Xj-YEI">
+                                <rect key="frame" x="30" y="78" width="354" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Text View" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1u-ow-jRs">
+                                <rect key="frame" x="30" y="148" width="354" height="365"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="elN-5d-yCo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0rs-ia-UNS"/>
-                            <constraint firstItem="kQq-Tl-IDC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="6n2-AP-rcZ"/>
-                            <constraint firstItem="kQq-Tl-IDC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cqn-1Q-Sbt"/>
-                            <constraint firstItem="kQq-Tl-IDC" firstAttribute="top" secondItem="elN-5d-yCo" secondAttribute="bottom" constant="100" id="xaH-op-eB6"/>
+                            <constraint firstItem="kQq-Tl-IDC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="200" id="6n2-AP-rcZ"/>
+                            <constraint firstItem="Uw9-8w-B1m" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="200" id="Atf-D1-3aY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c1u-ow-jRs" secondAttribute="trailing" constant="30" id="EQG-jc-ocU"/>
+                            <constraint firstItem="c1u-ow-jRs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="G0s-GM-B05"/>
+                            <constraint firstItem="kQq-Tl-IDC" firstAttribute="top" secondItem="c1u-ow-jRs" secondAttribute="bottom" constant="100" id="GAW-HY-xXL"/>
+                            <constraint firstItem="c1u-ow-jRs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Nqi-bF-fV9"/>
+                            <constraint firstItem="BRI-Xj-YEI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="OxN-zD-ig8"/>
+                            <constraint firstItem="kQq-Tl-IDC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-70" id="cqn-1Q-Sbt"/>
+                            <constraint firstItem="BRI-Xj-YEI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="lQQ-yr-md3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BRI-Xj-YEI" secondAttribute="trailing" constant="30" id="lqH-dr-Mbx"/>
+                            <constraint firstItem="Uw9-8w-B1m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="70" id="ls2-Ly-KzC"/>
+                            <constraint firstItem="oHY-xX-sH7" firstAttribute="top" secondItem="c1u-ow-jRs" secondAttribute="bottom" constant="22" id="t9g-dZ-3iy"/>
+                            <constraint firstItem="oHY-xX-sH7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tBk-ju-d8m"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="countLabel" destination="elN-5d-yCo" id="DxN-ug-NPk"/>
+                        <outlet property="countLabel" destination="BRI-Xj-YEI" id="dUu-PK-Ghe"/>
+                        <outlet property="eraseButton" destination="oHY-xX-sH7" id="ehi-W1-qp0"/>
+                        <outlet property="historyTextView" destination="c1u-ow-jRs" id="eWr-xZ-PeP"/>
+                        <outlet property="minusButton" destination="Uw9-8w-B1m" id="7ig-CJ-n4U"/>
                         <outlet property="plusButton" destination="kQq-Tl-IDC" id="0cF-93-hGT"/>
                     </connections>
                 </viewController>
@@ -66,11 +115,24 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eraser_fill_icon_185673-3 1" width="32" height="32"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
